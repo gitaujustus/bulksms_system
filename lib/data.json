@@ -1,0 +1,129 @@
+
+{
+    "barData1": {
+      "labels": ["2024-10-28"],
+      "datasets": [
+        {
+          "label": "Safaricom",
+          "data": [4.0],
+          "backgroundColor": ["#2ab148"]
+        },
+        {
+          "label": "Airtel",
+          "data": [1.0],
+          "backgroundColor": ["#ea1821"]
+        }
+      ]
+    },
+    "barOptions1": {
+      "responsive": true,
+      "maintainAspectRatio": false,
+      "plugins": {
+        "title": {
+          "display": false,
+          "text": "Network Activity"
+        }
+      }
+    },
+    "barData2": {
+      "labels": ["2024-10-28"],
+      "datasets": [
+        {
+          "label": "MEATSOKO",
+          "data": [1.0],
+          "backgroundColor": ["#1D4F98"]
+        }
+      ]
+    },
+    "barOptions2": {
+      "responsive": true,
+      "maintainAspectRatio": false,
+      "plugins": {
+        "title": {
+          "display": false,
+          "text": "Network Activity"
+        }
+      }
+    },
+    "lineData": {
+      "labels": ["2024-10-28"],
+      "datasets": [
+        {
+          "label": "Safaricom",
+          "data": [1.0],
+          "backgroundColor": ["#2ab148"]
+        },
+        {
+          "label": "Airtel",
+          "data": [4.0, 7.6, 8.9],
+          "backgroundColor": ["#ea1821"]
+        }
+      ]
+    },
+    "lineOptions": {
+      "responsive": true,
+      "maintainAspectRatio": false,
+      "plugins": {
+        "title": {
+          "display": false,
+          "text": "Network Activity"
+        }
+      }
+    },
+    "doughnutData1": {
+      "labels": ["Safaricom", "Airtel"],
+      "datasets": [
+        {
+          "data": [4.0, 1.0],
+          "backgroundColor": ["#2ab148", "#ea1821"],
+          "label": "Network "
+        }
+      ]
+    },
+    "doughnutOptions1": {
+      "responsive": true,
+      "maintainAspectRatio": false,
+      "plugins": {
+        "title": {
+          "display": false,
+          "text": "Network Activity"
+        },
+        "legend": {
+          "labels": {
+            "boxWidth": 10,
+            "boxHeight": 10,
+            "fontColor": "black",
+            "padding": 10
+          }
+        }
+      }
+    },
+    "doughnutData2": {
+      "labels": ["Safaricom", "Airtel"],
+      "datasets": [
+        {
+          "data": [4.0],
+          "backgroundColor": ["#1D4F98"],
+          "label": "Network "
+        }
+      ]
+    },
+    "doughnutOptions2": {
+      "responsive": true,
+      "maintainAspectRatio": false,
+      "plugins": {
+        "title": {
+          "display": false,
+          "text": "Network Activity"
+        },
+        "legend": {
+          "labels": {
+            "boxWidth": 10,
+            "boxHeight": 10,
+            "fontColor": "black",
+            "padding": 10
+          }
+        }
+      }
+    }
+  }
