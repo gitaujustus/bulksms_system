@@ -237,12 +237,9 @@ function Navbar() {
                         </Link>
                         {showReportsDropdown && (
                            <ul className='text-white  font-oswald  w-40 text-left mt-2'>
-                           <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href={"/reports/deliveryReport"}>My Delivery Reports</Link></li>
-                           <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'>Download Reports</li>
-                           <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'>My Delivery Reports</li>
-                           <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'>
-                            <Link href='/reports/downloadreports'>Download Reports</Link></li>
-                       </ul>
+                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href={"/reports/deliveryReport"}>My&nbsp;Delivery&nbsp;Reports</Link></li>
+                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href={"/reports/downloadreports"}>Download&nbsp;Reports</Link></li>
+                            </ul>
                         )}
                     </li>
 

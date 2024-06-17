@@ -1,7 +1,7 @@
 
 const BuyNow = () => {
     return ( 
-        <div className="min-h-screen bg-[#D9D9D9] py-10">
+        <div className="min-h-screen bg-[#D9D9D9] py-10 mt-14 md:mt-0 md:ml-80">
             <div className="flex p-4 gap-2 bg-[#B0C1DA] mx-10 rounded-md text-left">
                 <span>
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
