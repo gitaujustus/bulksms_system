@@ -11,16 +11,13 @@ import { IoMdSettings } from "react-icons/io";
 import { MdAccountBalanceWallet } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-
-
-
-
-// import { NavLink } from 'react-router-dom';
 function Navbar() {
     
+    const pathname= usePathname()
     const [ showNav, setShowNav ] = useState(false)
-        const [showSMSDropdown, setShowSMSDropdown] = useState(false);
+    const [showSMSDropdown, setShowSMSDropdown] = useState(false);
     const [showContactsDropdown, setShowContactsDropdown] = useState(false);
     const [showBuySMSDropdown, setShowBuySMSDropdown] = useState(false);
     const [showSenderIDsDropdown, setShowSenderIDsDropdown] = useState(false);
@@ -111,17 +108,15 @@ function Navbar() {
                 </div>
 
                 <ul className="space-y-5 font-medium navlinks">
-
-                   
                     <li>
-                        <Link href='/' className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group">
+                        <Link href='/' className={`flex items-center p-2 text-gray-900 rounded-lg ${pathname === "/" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] group`}>
                             <MdDashboard size={32} color='white'/>
                             <span className="ms-3 text-md md:text-lg text-white">Dashboard</span>
                         </Link>
                     </li>
 
                     <li className='flex flex-col items-center'>
-                        <Link href='/sms&compagings' className="flex w-full justify-between items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group">
+                        <Link href='/sms&compagings' onClick={toggleSMSDropdown} className={`flex w-full justify-between items-center p-2 text-gray-900 rounded-lg ${pathname === "/sms&compagings" ? "bg-[#80343E]" : ""}  hover:bg-[#3c567e] group`}>
                             <div className='flex'>
                             <svg width="37" height="26" viewBox="0 0 37 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M29.6 14.625V11.375H37V14.625H29.6ZM31.82 26L25.9 22.1L28.12 19.5L34.04 23.4L31.82 26ZM28.12 6.5L25.9 3.9L31.82 0L34.04 2.6L28.12 6.5ZM5.55 24.375V17.875H3.7C2.6825 17.875 1.81177 17.557 1.0878 16.9211C0.363833 16.2852 0.00123333 15.5198 0 14.625V11.375C0 10.4812 0.3626 9.71642 1.0878 9.0805C1.813 8.44458 2.68373 8.12608 3.7 8.125H11.1L20.35 3.25V22.75L11.1 17.875H9.25V24.375H5.55ZM22.2 18.4438V7.55625C23.0325 8.20625 23.7034 8.99871 24.2128 9.93363C24.7222 10.8685 24.9762 11.8907 24.975 13C24.9738 14.1093 24.7191 15.132 24.211 16.068C23.7028 17.004 23.0325 17.7959 22.2 18.4438Z" fill="white"/>
@@ -129,40 +124,65 @@ function Navbar() {
 
                                 <span className="ms-3 text-md md:text-lg text-white">SMS & Campaigns</span>
                             </div>
-                            <MdOutlineArrowDropUp onClick={toggleSMSDropdown} color='white' size={32} className={`ml-2 ${showSMSDropdown ? 'rotate-0': "-rotate-90" } color='white' `}/>
+                            <MdOutlineArrowDropUp  color='white' size={32} className={`ml-2 ${showSMSDropdown ? 'rotate-0': "-rotate-90" } color='white' `}/>
                         </Link>
                         {showSMSDropdown && (
-                             <ul className='text-white font-oswald w-40 text-left mt-2'>
-                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href="/sms&compagings">Send SMS</Link></li>
-                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href="/sms&compagings/sendfromfile">Send from file</Link></li>
-                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href="/sms&compagings/smstemplates">SMS templates</Link></li>
-                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href="/sms&compagings/campaigns">Campaigns</Link></li>
-                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href="/sms&compagings/campaignmessages">Campaign messages</Link></li>
-                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href="/sms&compagings/sentmessages">Sent messages</Link></li>
-                                <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href="/sms&compagings/incomingmessages">Incoming messages</Link></li>
+                             <ul className='text-white font-oswald w-48  text-left mt-2 '>
+                                <li className={` ${pathname === "/sms&compagings" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] p-2 rounded-md cursor-pointer`}>
+                                    <Link href="/sms&compagings">Send SMS</Link>
+                                </li>
+                                
+                                <li className={` ${pathname === "/sms&compagings/sendfromfile" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] p-2 rounded-md cursor-pointer`} >
+                                    <Link href="/sms&compagings/sendfromfile">Send from file</Link>
+                                </li>
+                                
+                                <li className={` ${pathname === "/sms&compagings/smstemplates" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] p-2 rounded-md cursor-pointer`} >
+                                    <Link href="/sms&compagings/smstemplates">SMS templates</Link>
+                                </li>
+                                
+                                <li className={` ${pathname === "/sms&compagings/campaigns" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] p-2 rounded-md cursor-pointer`} >
+                                    <Link href="/sms&compagings/campaigns">Campaigns</Link>
+                                </li>
+                                
+                                <li className={` ${pathname === "/sms&compagings/campaignmessages" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] p-2 rounded-md cursor-pointer`} >
+                                    <Link href="/sms&compagings/campaignmessages">Campaign&nbsp;messages</Link>
+                                </li>
+                                
+                                <li className={` ${pathname === "/sms&compagings/sentmessages" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] p-2 rounded-md cursor-pointer`} >
+                                    <Link href="/sms&compagings/sentmessages">Sent messages</Link>
+                                </li>
+                                
+                                <li className={` ${pathname === "/sms&compagings/incomingmessages" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] p-2 rounded-md cursor-pointer`} >
+                                    <Link href="/sms&compagings/incomingmessages">Incoming&nbsp;messages</Link>
+                                </li>
                          </ul>
+
                         )}
                     </li>
 
                     <li className='flex flex-col items-center'>
-                        <Link href='/contact&groups/groups' className="flex w-full justify-between items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group">
+                        <Link href='/contact&groups' onClick={toggleContactsDropdown} className={`flex w-full justify-between items-center p-2 text-gray-900 rounded-lg ${pathname === "/contact&groups" ? "bg-[#80343E]" : ""} hover:bg-[#3c567e] group`}>
                             <div className='flex'>
                                 <RiContactsFill size={32} color='white'/>   
                                 <span className="ms-3 text-md md:text-lg text-white">Contacts & Groups</span>
                             </div>
-                            <MdOutlineArrowDropUp onClick={toggleContactsDropdown} size={32} className={`ml-2 ${showContactsDropdown ? 'rotate-0': "-rotate-90" } color='white' `} color='white'/>
+                            <MdOutlineArrowDropUp  size={32} className={`ml-2 ${showContactsDropdown ? 'rotate-0': "-rotate-90" } color='white' `} color='white'/>
                         </Link>
                         {showContactsDropdown && (
-                        <ul className='text-white font-oswald  w-40 text-left mt-2'>
-                            <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href="/contact&groups/groups">Contact groups</Link></li>
-                            <li onClick={()=>{console.log('')}} className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'><Link href={"/contact&groups/contacts"}>Contacts</Link></li>
+                        <ul className='text-white font-oswald  w-48  text-left mt-2'>
+                            <li className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'>
+                                <Link href="/contact&groups/groups">Contact groups</Link>
+                            </li>
+                            <li className='hover:bg-[#3c567e] p-2 rounded-md cursor-pointer'>
+                                <Link href={"/contact&groups/contacts"}>Contacts</Link>
+                            </li>
                         </ul>
                         )}
                     </li>
 
                    
                     <li className='flex flex-col items-center'>
-                        <Link href='/buysms/buynow' className="flex w-full justify-between items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group ">
+                        <Link href='/buysms/buynow' className={`flex w-full justify-between items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group `}>
                            <div className='flex'>
                                 <MdAccountBalanceWallet size={32} color='white'/>
                                 <span className="ms-3 text-md md:text-lg text-white">Buy SMS</span>
@@ -177,6 +197,7 @@ function Navbar() {
                     </ul>
                        )}
                     </li>
+
                     <li className='flex flex-col items-center'>
                         <Link href='/senderids/allsenderids' className="flex w-full justify-between items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group">
                            <div className='flex'>
@@ -224,6 +245,7 @@ function Navbar() {
                        </ul>
                         )}
                     </li>
+
                     <li>
                         <Link href='/backgroundtasks' className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group">
                         <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -234,12 +256,14 @@ function Navbar() {
                             <span className="ms-3 text-md md:text-lg text-white">Background Tasks</span>
                         </Link>
                     </li>
+
                     <li>
                         <Link href='/settings' className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group">
                             <IoMdSettings size={32} color='white'/>
                             <span className="ms-3 text-md md:text-lg text-white">Settings</span>
                         </Link>
                     </li>
+
                     <li>
                         <Link href='/user-manual' className="flex gap-2 items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group">
                         <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -249,6 +273,7 @@ function Navbar() {
                             <span className="ms-3 text-md md:text-lg text-white">User Manual</span>
                         </Link>
                     </li>
+
                     <li>
                         <Link href='/logout' className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-[#3c567e] group">
                             <CiLogout size={32} color='white'/>
@@ -256,6 +281,7 @@ function Navbar() {
                         </Link>
                     </li>
                 </ul>
+                
                 </div>
             </aside>
     </div>
