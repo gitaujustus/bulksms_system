@@ -7,11 +7,26 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily:{
+        "oswald": ["Oswald", "sans-serif"]
       },
+      colors:{
+        "safaricom": "#2ab148",
+        "airtel": "#ea1821",
+        "hillganred": "#bc3333",
+        'theme-default': '#bc3333',
+        'theme-default-dark': '#212121',
+        'theme-amber': '#fbc02d',
+        'theme-amber-dark': '#212121',
+        'theme-amethyst': '#7b1fa2',
+        'theme-amethyst-dark': '#212121',
+        'theme-cobalt': '#1976d2',
+        'theme-cobalt-dark': '#212121',
+        'theme-emerald': '#388e3c',
+        'theme-emerald-dark': '#212121',
+        'theme-ruby': '#d32f2f',
+        'theme-ruby-dark': '#212121'
+      }
     },
   },
   plugins: [],
