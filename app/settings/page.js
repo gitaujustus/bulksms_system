@@ -29,7 +29,7 @@ function Settings() {
         </div>
       </div>
       <div className="bg-white w-full lg:w-2/3 p-4 rounded-2xl">
-        <div className="font-semibold text-left gap-3 flex flex-wrap my-3">
+        <div className="font-semibold text-left gap-3 text-sm flex flex-wrap my-3">
           <p
             className={`cursor-pointer pb-2 ${activeTab === 'ACCOUNT_SETTINGS' ? 'border-b-2 border-[#B91C1C]' : ''}`}
             onClick={() => setActiveTab('ACCOUNT_SETTINGS')}
@@ -63,5 +63,6 @@ function Settings() {
     </main>
   );
 }
+
 
 export default Settings;
