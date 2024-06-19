@@ -151,7 +151,7 @@ const handleSubmit = (e) => {
           </button>
         </form>
         <p className="text-center mt-4 text-sm">
-          Already have an account? <Link href="/login" className="underline text-[#ff5c5c]">Log in</Link>
+          Already have an account? <Link href="/signin" className="underline text-[#ff5c5c]">Log in</Link>
         </p>
       </div>
     </div>

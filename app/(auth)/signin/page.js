@@ -33,7 +33,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <p className='text-sm text-gray-500'>
-              Don&apos;t have an account yet? <Link href='/register' className='text-red-600 hover:underline'>Register</Link>
+              Don&apos;t have an account yet? <Link href='/signup' className='text-red-600 hover:underline'>Register</Link>
             </p>
             <p className='text-sm'>or</p>
             <Link href='/account/activate' className='text-red-600 text-sm hover:underline'>Activate your account</Link>
