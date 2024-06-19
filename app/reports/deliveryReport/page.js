@@ -52,7 +52,9 @@ const DeliveryReport = () => {
                 </div>
 
                 {/* Generate report button */}
-                <button className='bg-hillganred text-white font-bold my-4 p-2 rounded-lg m-2 text-sm w-3/4'>GENERATE REPORT</button>
+                <div className="flex justify-center">
+                  <button className='bg-hillganred text-white font-bold mx-auto my-4 p-2 rounded-lg text-sm w-3/4'>GENERATE REPORT</button>
+                </div>
             </div>
 
             {/* Second box */}

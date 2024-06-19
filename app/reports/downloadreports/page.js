@@ -2,7 +2,8 @@ import React from 'react'
 
 function downloadReports() {
   return (
-    <div className="min-h-screen bg-white p-4 rounded-md mt-14 md:mt-0 md:ml-80">
+    <main className="bg-gray-300 p-3">
+      <div className="min-h-screen bg-white p-4 rounded-md mt-14 md:mt-0 md:ml-80">
       <div className="flex justify-between mb-4">
         <h2 className="text-xl font-semibold">Download Reports</h2>
         <button className="bg-red-500 flex items-center text-xs font-semibold text-white px-4 py-1 rounded-lg">
@@ -89,6 +90,7 @@ function downloadReports() {
       </div>
       </div>
     </div>
+    </main>
   )
 }
 
